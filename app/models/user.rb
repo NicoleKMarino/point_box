@@ -8,12 +8,7 @@ class User < ActiveRecord::Base
                      uniqueness: true
   has_secure_password
 
-enum role: %w(default admin)
+  enum role: ["default", "admin"]
 
-
-# 
-# def is_admin?
-#   self.user_role == 1
-# end
 
 end

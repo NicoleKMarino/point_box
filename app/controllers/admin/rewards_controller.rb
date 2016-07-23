@@ -1,4 +1,4 @@
-class Admin::RewardsController < ApplicationController
+class Admin::RewardsController < Admin::BaseController
   before_filter :current_user
 
   def new

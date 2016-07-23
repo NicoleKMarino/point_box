@@ -1,6 +1,8 @@
 
 
 class UsersController < ApplicationController
+  helper_method :is_admin?
+
 
   def show
     @user= User.find(params[:id])

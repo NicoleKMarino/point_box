@@ -1,0 +1,6 @@
+<% @users.each do |user| %>
+<h2><%= user.username%></h2>
+<p> Created On:<%= user.created_at %></p>
+<%= link_to "Delete", admin_user_path(:id => user.id), method: :delete%>
+<br></br>
+<%end %>
