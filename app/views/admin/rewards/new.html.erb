@@ -1,0 +1,14 @@
+<%= flash.now[:error] %>
+<%= flash[:notice] %>
+
+<h1> Create a Reward </h1>
+
+<%= form_for [:admin, @reward] do |f| %>
+  <%= f.label :item %>
+  <%= f.text_field :item %>
+  <br></br>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <br></br>
+  <%= f.submit "Create Reward" %>
+<% end %>

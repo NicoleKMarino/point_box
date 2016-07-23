@@ -9,4 +9,5 @@ class GuestCreatesAccountTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Welcome, Test.")
   end
+
 end

@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
   has_secure_password
 
 enum role: %w(default admin)
+
+
+# 
+# def is_admin?
+#   self.user_role == 1
+# end
+
 end
