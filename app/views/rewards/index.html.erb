@@ -1,8 +1,11 @@
 
 <% @rewards.each do |reward| %>
     <h3>Reward: <%= reward.item %></h3>
+    <h3>Id:<%= reward.id %>
     <h3>Cost: <%= reward.cost %> points</h3>
+     <br></br>
     <%= link_to "Delete", admin_reward_path(:id => reward.id), method: :delete if current_user.admin?%>
     <br></br>
+    <%= link_to "Redeem", rewards_users_path(reward_id: reward.id), method: :post %>
   <%end %>
 <%=link_to "New Reward", new_admin_reward_path%>

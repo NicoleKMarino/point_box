@@ -1,3 +1,9 @@
 <h2>Hello, <%=@user.username%>.</h2>
 
+<h1>Points: <%= @user.points %></h1>
+<h1>Rewards:<% @user.rewards.each do |reward| %>
+  <p><%=reward.item %></p>
+  <%end %>
+
+
 <%= link_to "See All Users", admin_users_path if current_user.admin? %>
