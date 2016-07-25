@@ -5,7 +5,6 @@ require 'pry'
 class User < ActiveRecord::Base
   has_many :rewards_users, dependent: :destroy
   has_many :rewards, through: :rewards_users
-  belongs_to :rewards_users
   
   validates :username, presence: true,
                      uniqueness: true

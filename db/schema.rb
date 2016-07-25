@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724004519) do
+ActiveRecord::Schema.define(version: 20160725044639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(version: 20160724004519) do
     t.integer "reward_id"
   end
 
-  add_index "rewards_users", ["reward_id", "user_id"], name: "index_rewards_users_on_reward_id_and_user_id", using: :btree
+  add_index "rewards_users", ["reward_id"], name: "index_rewards_users_on_reward_id", using: :btree
+  add_index "rewards_users", ["user_id"], name: "index_rewards_users_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -39,4 +40,6 @@ ActiveRecord::Schema.define(version: 20160724004519) do
     t.integer  "points",          default: 0
   end
 
+  add_foreign_key "rewards_users", "rewards"
+  add_foreign_key "rewards_users", "users"
 end

@@ -1,7 +1,7 @@
 <h2>Hello, <%=@user.username%>.</h2>
 
 <h1>Points: <%= @user.points %></h1>
-<h1>Rewards:<% @user.rewards.each do |reward| %>
+<h1>Rewards:<% @user.rewards.each do |reward| %></h1>
   <p><%=reward.item %></p>
   <%end %>
 
